@@ -169,6 +169,12 @@ public class BookService implements CrudRepository {
 				.map(e-> e.getBookName())
 				.collect(toList());
 	}
+
+	@Override
+	public Book findByID(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 			
 		
 

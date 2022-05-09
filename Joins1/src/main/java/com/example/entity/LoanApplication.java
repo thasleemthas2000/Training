@@ -1,6 +1,6 @@
 package com.example.entity;
 
-public class LoanApplication extends Customer {
+public class LoanApplication  {
 
 	private int applicationNumber;
 	private Customer customer;

@@ -110,7 +110,55 @@ public class ProductServices {
 		return productList; 
 	}
 	
+//	public void usingTcn(Product prd1, Product prd2) {
+//		String sql1 ="insert into thas_product values(?,?,?)";
+//		try(PreparedStatement pstmt = con.prepareStatement(sql1)){
+//			con.setAutoCommit(false);// automcommit is defaultly true so u must give false.
+//			
+//			pstmt.setInt(1,prd1.getProductId());
+//			pstmt.setString(2,prd1.getProductName());
+//			pstmt.setDouble(3,prd1.getPrice());
+//			
+//			int rowAdded = pstmt.executeUpdate();
+//			System.out.println("Row Added :" +rowAdded);
+//			
+//			
+//			
+//		}catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
+	// u use connection from main method(app)
 	
-	// u use connection from main method(app)	
+	public void usingTxn(Product prd1,Product prd2) {
+		String sql = "insert into thas_product values(?, ?, ?)";
+		
+		try(PreparedStatement pstmt = con.prepareStatement(sql)){
+			con.setAutoCommit(false);
+			pstmt.setInt(1, prd1.getProductId());
+			pstmt.setString(2, prd1.getProductName());
+			pstmt.setDouble(3, prd1.getPrice());
+			
+			int rowAdded =pstmt.executeUpdate();
+			
+			pstmt.setInt(1, prd2.getProductId());
+			pstmt.setString(2, prd2.getProductName());
+			pstmt.setDouble(3, prd2.getPrice());
+			
+			int rowAdded2 =pstmt.executeUpdate();
+			if(prd2.getPrice()>prd1.getPrice()) {
+				con.commit();
+			}
+			else {
+				con.rollback();
+			}
+			
+			
+			System.out.println("Row Added:"+rowAdded +","+rowAdded2);
+		}
+		catch(SQLException e){
+			e.printStackTrace();
+		}
+}
 }

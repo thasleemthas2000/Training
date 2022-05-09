@@ -1,4 +1,4 @@
-package com.training.model;
+               package com.training.model;
 
 public class Permutation {
 	public static void main(String[] args) {
