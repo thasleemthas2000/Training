@@ -56,5 +56,28 @@ public class ProductController {
 		return "showproduct";
 			
 	}
+	@RequestMapping(value= "/product/delete", method = RequestMethod.GET)
+	public String initDeleteForm(Model model) {
+			
+			model.addAttribute("title","deleteProducts");
+			
+			return "find";
+		}
+	@RequestMapping(value= "/product/delete", method = RequestMethod.POST)
 
+	public String deleteProduct(@RequestParam("id") int id,Model model) {
+		
+		int entity = repos.remove(id);
+
+		model.addAttribute("delete",entity);
+		return "delete";
+	}
+	
+	@RequestMapping(value = "/",method=RequestMethod.GET)
+	public String initIndexPage(Model model) {
+		
+		model.addAttribute("title","Product Management");
+		
+		return "index";
+	}
 }
