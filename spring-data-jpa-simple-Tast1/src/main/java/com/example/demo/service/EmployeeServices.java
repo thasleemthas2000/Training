@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,23 @@ public class EmployeeServices {
 	}
 	public List<Employees> findByEmployeeId(int id){
 		return this.repo.findByEmployeeId(id);
-	}
+	} 
 	public List<Employees> findByEmployeeName(String empName){
 		return this.repo.findByEmployeeName(empName);
+	}
+	public List<Employees> findByDateOfBirth(LocalDate date){
+		return this.repo.findByDateOfBirth(date);
+	}
+	public List<Employees> findByLocation(String loc ){
+		return this.repo.findByLocation(loc);
+	}
+	public List<Employees> findBySkillSet(String skills){
+		return this.repo.findBySkillSet(skills);
+	}
+	public List<Employees> findBySkillSetOrLocation(String skill, String loc){
+		return this.repo.findBySkillSetOrLocation(skill, loc);
+	}
+	public List<Employees> findByLocationAndSkillSet(String location, String skill){
+	return this.repo.findByLocationAndSkillSet(location, skill);
 	}
 }

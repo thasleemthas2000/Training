@@ -29,7 +29,7 @@ public class Employees {
 	LocalDate dateOfBirth;
 	
 	@Column(name = "location")
-	String Location; 
+	String location; 
 	
 	@Column(name = "skill_set")
 	String skillSet;

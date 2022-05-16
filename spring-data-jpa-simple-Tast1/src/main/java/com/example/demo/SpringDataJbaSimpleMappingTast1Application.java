@@ -24,7 +24,16 @@ public class SpringDataJbaSimpleMappingTast1Application {
 		service.findByEmployeeId(2).forEach(System.out::println);
 		System.out.println("****************");
 		service.findByEmployeeName("Apple").forEach(System.out::println);
-		
+		System.out.println("****************");
+		service.findByDateOfBirth(LocalDate.of(2000, 01, 01)).forEach(System.out::println);
+		System.out.println("****************");
+		service.findByLocation("Mumbai").forEach(System.out::println);
+		System.out.println("****************");
+		service.findBySkillSet("#C").forEach(System.out::println);
+		System.out.println("****************");
+		service.findBySkillSetOrLocation("java", "Cbe").forEach(System.out::println);
+		System.out.println("****************");
+		service.findByLocationAndSkillSet("Delhi", "C++").forEach(System.out::println);
 //		Employees added = service.add(kutty);
 //		
 //		
