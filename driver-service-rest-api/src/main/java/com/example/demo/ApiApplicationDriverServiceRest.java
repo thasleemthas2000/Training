@@ -9,11 +9,15 @@ import org.springframework.context.annotation.Bean;
 import com.example.demo.entity.Driver;
 import com.example.demo.repo.DriverRepository;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
-public class DriverServiceRestApiApplication {
+@OpenAPIDefinition(info = @Info(title = "Driver Service -Api", version = "1.0"))
+public class ApiApplicationDriverServiceRest {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DriverServiceRestApiApplication.class, args);
+		SpringApplication.run(ApiApplicationDriverServiceRest.class, args);
 		
 		
 	}

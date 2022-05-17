@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,17 +42,22 @@ public Driver addDriver(Driver entity) {
 	
     public void deleteById(int id) {
        this.repo.deleteById(id);
-
 }
-//	public Driver removeById(Driver entity) {
-//		   
-//		   Optional<Driver> optional = Optional.empty();
-//		if(this.repo.existsById(entity.getDriverId())) {
-//		this.repo.delete(entity);
-//		optional = Optional.of(entity);
-//		}
-//
-//		      return this.repo.save(entity);  
-//	}
+    
+public List<Driver> findByDriverName(String srchName){
+	return this.repo.findByDriverName(srchName);
+}
 
+public List<Driver> srchByMobileNumber(long number) {
+	return this.repo.findByMobileNumber(number);
+}
+public List<Driver> srchByDriverRating(double rating){
+	return this.repo.searchByRating(rating);
+}
+public int updateRating(int id, double updatedRating) {
+	return this.repo.modifyRating(id, updatedRating);
+}
+public List<Driver> sortedList(String propName){
+	return this.repo.findAll(Sort.by(propName));
+}
 }
