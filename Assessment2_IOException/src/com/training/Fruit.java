@@ -8,7 +8,7 @@ public class Fruit {
 	  try {
 	      
 	      FileWriter myWriter = new FileWriter("Fruit.txt");
-	      myWriter.write("Apple is red in colour\nOrange is round in shape\nBanana is good for health\nGrapes will grow as bunch\nMango is a seasonal fruit");
+	      myWriter.write("Apple is red in color\nOrange is round in shape\nBanana is good for health\nGrapes will grow as bunch\nMango is a seasonal fruit");
 	      myWriter.close();
 	      
 	      FileWriter myWriter1 = new FileWriter("File.txt");
