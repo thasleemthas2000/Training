@@ -6,7 +6,7 @@ private String firstName;
 private double markScored;
 private String branch;
 
-public String getBranch() {
+public String getBranch() {//access,return type,method name
 	return branch;
 }
 public void setBranch(String branch) {
@@ -40,6 +40,11 @@ public Student(int rollNumber, String firstName, double markScored, String branc
 	this.firstName = firstName;
 	this.markScored = markScored;
 	this.branch = branch;
+}
+public Student(int rollNumber, String firstName) {
+	super();
+	this.rollNumber = rollNumber;
+	this.firstName = firstName;
 }
 public Student(int rollNumber, String firstName, String branch) {
 	super();

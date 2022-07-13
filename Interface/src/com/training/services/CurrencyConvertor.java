@@ -1,8 +1,9 @@
 package com.training.services;
 import com.training.ifaces.CheckCondition;
+
 import com.training.ifaces.Function;
 
-public class CurrencyConvertor implements Function, CheckCondition {
+public class CurrencyConvertor implements Function, CheckCondition{
 
 	@Override
 	public boolean test(int value) {
@@ -15,5 +16,7 @@ public class CurrencyConvertor implements Function, CheckCondition {
 		// TODO Auto-generated method stub
 		return value*100;
 	}
+
+	
 
 }

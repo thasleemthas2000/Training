@@ -32,8 +32,6 @@ public class Fruit {
 	            line = bufferbr.readLine();
 	        }
 	        writer.flush();
-	          
-
 	        bufferbr.close();
 	        writer.close();
 	        

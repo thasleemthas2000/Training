@@ -1,5 +1,6 @@
 package com.training;
 import com.training.ifaces.CheckCondition;
+
 import com.training.ifaces.Conditional;
 import com.training.ifaces.Function;
 import com.training.services.CurrencyConvertor;
