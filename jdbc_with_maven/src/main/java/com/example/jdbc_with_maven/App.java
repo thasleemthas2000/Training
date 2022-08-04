@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import com.example.dao.MemberRepository;
-import com.example.demo.services.ProductServices;
+import com.example.demo.services.ProductService;
 import com.example.entity.Member;
 import com.example.entity.Product;
 import com.example.util.ConnectionFactory;
@@ -35,7 +35,7 @@ public static void product() {
 	//Connection con = ConnectionFactory.getOracleConnection();
 	Connection con = ConnectionFactory.getPostgresConnection();
 	
-	 ProductServices service = new ProductServices(con);
+	 ProductService service = new ProductService(con);
 	 
      Product toAdd = new Product(82, "Tawa", 1500.00);
      service.findAll().forEach(System.out::println);

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import com.example.demo.services.CabDriverService;
 
 @RestController
 @RequestMapping(path = "/api/v1/cabdrivers")
+@CrossOrigin(origins = "*")
 public class CabDriverController {
 
 	@Autowired
@@ -37,10 +39,10 @@ public class CabDriverController {
 	public CabDriver findById(@PathVariable("id")int id) {
 		return this.service.findById(id).orElseThrow(()-> new RuntimeException("Element Not Found"));
 	}
-	@GetMapping(path="/srch/cabdrivers/{name}")
+	@GetMapping(path="/srch/{name}")
 	public CabDriver findByDriverName(@PathVariable("name") String name) {
 		CabDriver found = this.service.findByDriverName(name);
-		found.setLocation(found.getLocation()+":" +port);
+		found.setLocation(found.getLocation()+":"+port);
 		return found;
 	}
 	

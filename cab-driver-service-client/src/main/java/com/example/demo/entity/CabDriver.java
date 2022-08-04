@@ -14,7 +14,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@FieldDefaults(level =AccessLevel.PRIVATE)
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class CabDriver {
 
 	int driverID;
